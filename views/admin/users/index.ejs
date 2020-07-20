@@ -1,0 +1,33 @@
+<%- include('../../partials/header') -%>
+<%- include('../../partials/navbar') -%>
+
+<div class="container page-content">
+    <hr>
+    <h2>Usuários</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>email</th>                
+            </tr>
+        </thead>
+        <% users.forEach(user => { %>
+            <tr>    
+                <th><%= user.id %></th>
+                <th><%= user.email %></th>                
+                <th>                  
+                    <a href="" class="btn btn-warning">Editar</a>
+                    
+                    <form method="POST" action="" style="display:inline" 
+                    onsubmit ="confirmarDelecao(event, this)">
+                        <input type="hidden" name="id" value="<%= user.id %>">
+                        <button class="btn btn-danger">Deletar</button>
+                    </form>
+                </th>
+            </tr>
+        <% }) %>
+    </table>
+</div>
+
+<%- include ('../../partials/footer') -%>

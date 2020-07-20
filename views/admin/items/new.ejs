@@ -1,0 +1,49 @@
+<%- include('../../partials/header') -%>
+<%- include('../../partials/navbar') -%>
+
+<div class="container page-content">
+    <div class="card">
+        <div class="card-header">
+            <h4>Cadastrar Novo Código</h4>
+        </div>
+        <div class="card-body">   
+            <form method="POST" action="/items/save">
+                <input class="form-control" text="text" name="codigo" placeholder="Escreva o código do E-FISCO">
+                <br>
+                <textarea class="form-control
+                " name="descricao" placeholder="Escreva a descrição..." ></textarea>
+                <br>
+                <input class="form-control" text="text" name="medida" placeholder="Escreva a unidade de medida">
+                <br>
+                <input class="form-control" text="text" name="quantidade" placeholder="Escreva a quantidade no estoque">
+                <br>
+                <input class="form-control" text="text" name="valor" placeholder="Escreva o valor (R$)">
+                <!--Formulário de classe com botão para nova classe-->
+                <label class="mt-3">Classe</label>
+                <div class="form-inline">
+                    
+                    <select name="classe" class="form-control col-9">   
+                        <% classes.forEach(classe => { %>                                
+                            <option value="<%= classe.id %>"><%= classe.titulo %></option> 
+                        <% }) %>
+                                                              
+                    </select>
+                    <button class="btn btn-success col-2 ml-md-3">
+                        <a href="/cadastroclasse" target="_blank" style="text-decoration: none; color: white">Nova Classe</a> 
+                    </button> 
+                </div>
+                <br>
+                <button class="btn btn-primary" onclick="avisoDeCadastro()">Cadastrar</button> 
+            </form>
+        </div>     
+    </div>    
+</div>
+
+<%- include ('../../partials/footer') -%>
+
+ 
+<script>
+    function avisoDeCadastro() {
+        alert("Item cadastrado com sucesso!")
+    }  
+</script>

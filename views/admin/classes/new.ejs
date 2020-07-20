@@ -1,0 +1,31 @@
+<%- include('../../partials/header') -%>
+<%- include('../../partials/navbar') -%>
+
+<div class="container page-content">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h2>Cadastro de Nova Classe</h2>
+        </div>
+        <div class="card-body">   
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">Cadastre a classe com o mesmo nome e número do cadastro no E-FISCO. <br> 
+                </p>
+                <footer class="blockquote-footer">
+                    <a target="_blank" href="https://efisco.sefaz.pe.gov.br/sfi_fin_gbp/PRConsultarCatalogoMaterial">
+                        Clique aqui para conferir o catálogo do e-fisco
+                    </a>
+                </footer>
+              </blockquote>
+            <form method="POST" action="/classes/save">
+                <input class="form-control" text="number" name="grupo" placeholder="Digite o número de grupo. Ex.: 85">
+                <input class="form-control mt-md-3" text="number" name="classe" placeholder="Digite o número da classe. Ex.: 8501">
+                <input class="form-control mt-md-3" text="text" name="titulo" placeholder="Digite o título da classe. EX.: ARTIGOS PARA HIGIENE PESSOAL - CADASTRO PADRONIZADO">
+                <br>
+                <button class="btn btn-success">Cadastrar</button> 
+            </form>
+        </div>     
+    </div>
+</div>
+
+<%- include ('../../partials/footer') -%>
